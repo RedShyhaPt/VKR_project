@@ -1,0 +1,271 @@
+version: '1.0.0'
+services:
+    mysql:
+        image: mysql:5.7
+        container_name: airflow_db
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=airflow
+            - MYSQL_USER=airflow
+            - MYSQL_PASSWORD=airflow
+        command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+
+    webserver:
+        image: apache/airflow:2.4.1
+        entrypoint: /bin/bash
+        restart: always
+        depends_on:
+            - mysql
+        environment:
+            - LOAD_EX=n
+            - EXECUTOR=Local
+        volumes:
+            - ./dags:/usr/local/airflow/dags
+            - ./logs:/opt/airflow/logs
+            #- ./plugins:/usr/local/airflow/plugins
+        ports:
+            - "8080:8080"
+        command: 
+            - -c
+            - |
+              airflow webserver
+              
+        healthcheck:
+            test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+            interval: 30s
+            timeout: 30s
+            retries: 3
+
+    dbmaster:
+        image: postgres
+        restart: always
+        volumes:
+          - type: bind
+            source: /private/var/lib/my-api/postgresql/master
+            target: /var/lib/postgresql
+          - type: bind
+            source: /private/var/lib/my-api/postgresql/master/data
+            target: /var/lib/postgresql/data
+        ports:
+          - "6432:5432"
+        environment:
+            POSTGRES_USER: stock
+            POSTGRES_PASSWORD: stock
+            POSTGRES_DB: stock
+
+    kafka:                       
+        image: wurstmeister/kafka
+        ports:                   
+            - "9092:9092"        
+            - "7203:7203"        
+        links:                   
+            - zookeeper:zk       
+        environment:             
+            KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+            KAFKA_ZOOKEEPER_CONNECT: zk:2181     
+            KAFKA_ADVERTISED_PORT: 9092          
+                                      
+    zookeeper:                        
+        image: wurstmeister/zookeeper 
+        ports:                        
+            - "2181:2181"
+
+
+
+---
+version: '3'
+x-airflow-common:
+  &airflow-common
+  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.1.2}
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+    # AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-apache-airflow-providers-docker==2.1.0}
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+  user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
+  depends_on:
+    # redis:
+    #   condition: service_healthy
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  # redis:
+  #   image: redis:latest
+  #   ports:
+  #     - 6379:6379
+  #   healthcheck:
+  #     test: ["CMD", "redis-cli", "ping"]
+  #     interval: 5s
+  #     timeout: 30s
+  #     retries: 50
+  #   restart: always
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"']
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  # airflow-worker:
+  #   <<: *airflow-common
+  #   command: celery worker
+  #   healthcheck:
+  #     test:
+  #       - "CMD-SHELL"
+  #       - 'celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"'
+  #     interval: 10s
+  #     timeout: 10s
+  #     retries: 5
+  #   restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+
+  # flower:
+  #   <<: *airflow-common
+  #   command: celery flower
+  #   ports:
+  #     - 5555:5555
+  #   healthcheck:
+  #     test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
+  #     interval: 10s
+  #     timeout: 10s
+  #     retries: 5
+  #   restart: always
+
+  # Required because of DockerOperator. For secure access and handling permissions.
+  docker-socket-proxy:
+    image: tecnativa/docker-socket-proxy:0.1.1
+    environment:
+      CONTAINERS: 1
+      IMAGES: 1
+      AUTH: 1
+      POST: 1
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+
+volumes:
+  postgres-db-volume:
+
+
+
+
+version: '3.7'
+
+services:
+    minio:
+        restart: always
+        image: minio/minio@sha256:d28c69eda85fb4c362d2a8976274da8f369398fc943b0c238c50722fd0c578c4
+        container_name: mlflow_s3
+        ports:
+            - "9000:9000"
+            - "9001:9001"
+        command: server /data --console-address ':9001' --address ':9000'
+        environment:
+            - MINIO_ROOT_USER=${AWS_ACCESS_KEY_ID}
+            - MINIO_ROOT_PASSWORD=${AWS_SECRET_ACCESS_KEY}
+        volumes:
+            - minio_data:/data
+
+    mc:
+        image: minio/mc@sha256:d281c2bfce56c727dc229643f8df99e24295fae586aaf6acb859eb2dd4c66ca4
+        depends_on:
+            - minio
+        container_name: mc
+        env_file:
+            - .env
+        entrypoint: >
+            /bin/sh -c "
+            /tmp/wait-for-it.sh minio:9000 &&
+            /usr/bin/mc alias set minio http://minio:9000 ${AWS_ACCESS_KEY_ID} ${AWS_SECRET_ACCESS_KEY} &&
+            /usr/bin/mc mb minio/mlflow;
+            exit 0;
+            "
+        volumes:
+            - ./wait-for-it.sh:/tmp/wait-for-it.sh
+
+    db:
+        restart: always
+        image: mysql/mysql-server@sha256:fcbe88694872e88ae406bc69540211505eae922a182690d85be6af1a48e5ca0a
+        container_name: mlflow_db
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        volumes:
+            - dbdata:/var/lib/mysql
+
+    web:
+        restart: always
+        build: ./mlflow
+        image: mlflow_server
+        container_name: mlflow_server
+        depends_on:
+            - mc
+            - db
+        ports:
+            - "5000:5000"
+        environment:
+            - MLFLOW_S3_ENDPOINT_URL=http://minio:9000
+            - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+            - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+        command: mlflow server --backend-store-uri mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE} --default-artifact-root s3://mlflow/ --host 0.0.0.0
+
+volumes:
+    dbdata:
+    minio_data:
+
+

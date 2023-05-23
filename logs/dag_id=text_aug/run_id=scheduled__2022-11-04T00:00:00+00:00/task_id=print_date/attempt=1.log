@@ -1,0 +1,30 @@
+[2022-11-12T08:27:06.964+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: text_aug.print_date scheduled__2022-11-04T00:00:00+00:00 [queued]>
+[2022-11-12T08:27:07.401+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: text_aug.print_date scheduled__2022-11-04T00:00:00+00:00 [queued]>
+[2022-11-12T08:27:07.402+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-12T08:27:07.402+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2022-11-12T08:27:07.402+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-12T08:27:09.009+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): print_date> on 2022-11-04 00:00:00+00:00
+[2022-11-12T08:27:09.054+0000] {standard_task_runner.py:55} INFO - Started process 8935 to run task
+[2022-11-12T08:27:09.090+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'text_aug', 'print_date', 'scheduled__2022-11-04T00:00:00+00:00', '--job-id', '4669', '--raw', '--subdir', 'DAGS_FOLDER/text_aug.py', '--cfg-path', '/tmp/tmpyhniwsc6']
+[2022-11-12T08:27:09.098+0000] {standard_task_runner.py:83} INFO - Job 4669: Subtask print_date
+[2022-11-12T08:27:09.153+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-11-12T08:27:09.274+0000] {task_command.py:376} INFO - Running <TaskInstance: text_aug.print_date scheduled__2022-11-04T00:00:00+00:00 [running]> on host ed3e98310717
+[2022-11-12T08:27:09.437+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=text_aug
+AIRFLOW_CTX_TASK_ID=print_date
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-04T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-04T00:00:00+00:00
+[2022-11-12T08:27:09.442+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-11-12T08:27:09.443+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'date']
+[2022-11-12T08:27:09.464+0000] {subprocess.py:86} INFO - Output:
+[2022-11-12T08:27:09.842+0000] {subprocess.py:93} INFO - Sat Nov 12 08:27:09 UTC 2022
+[2022-11-12T08:27:09.844+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2022-11-12T08:27:09.960+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=text_aug, task_id=print_date, execution_date=20221104T000000, start_date=20221112T082707, end_date=20221112T082709
+[2022-11-12T08:27:10.071+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-11-12T08:27:10.154+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

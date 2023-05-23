@@ -1,0 +1,36 @@
+---
+version: '3'
+services:
+  dbmaster:
+    image: azat/stock-predict
+    restart: always
+    volumes:
+      - type: bind
+        source: /private/var/lib/my-api/postgresql/master
+        target: /var/lib/postgresql
+      - type: bind
+        source: /private/var/lib/my-api/postgresql/master/data
+        target: /var/lib/postgresql/data
+    ports:
+      - "6432:5432"
+    environment:
+        POSTGRES_USER: stock
+        POSTGRES_PASSWORD: stock
+        POSTGRES_DB: stock
+
+  kafka:                       
+    image: wurstmeister/kafka
+    ports:                   
+      - "9092:9092"        
+      - "7203:7203"        
+    links:                   
+      - zookeeper:zk       
+    environment:             
+        KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+        KAFKA_ZOOKEEPER_CONNECT: zk:2181     
+        KAFKA_ADVERTISED_PORT: 9092          
+                                      
+  zookeeper:                        
+    image: wurstmeister/zookeeper 
+    ports:                        
+      - "2181:2181"

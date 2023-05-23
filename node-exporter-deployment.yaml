@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: node-exporter
+  name: node-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: node-exporter
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/default: "true"
+        io.kompose.service: node-exporter
+    spec:
+      containers:
+        - args:
+            - --path.procfs=/host/proc
+            - --path.sysfs=/host/sys
+            - --collector.textfile
+            - --collector.textfile.directory=/etc/node-exporter/
+            - --collector.filesystem.ignored-mount-points
+            - ^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($|/)
+          env:
+            - name: TZ
+              value: Europe/Moscow
+          image: prom/node-exporter
+          name: exporter
+          ports:
+            - containerPort: 9101
+          resources: {}
+          volumeMounts:
+            - mountPath: /host/proc
+              name: node-exporter-claim0
+              readOnly: true
+            - mountPath: /host/sys
+              name: node-exporter-claim1
+              readOnly: true
+            - mountPath: /rootfs
+              name: node-exporter-claim2
+              readOnly: true
+            - mountPath: /etc/node-exporter/
+              name: node-exporter-claim3
+      hostname: exporter
+      restartPolicy: Always
+      volumes:
+        - name: node-exporter-claim0
+          persistentVolumeClaim:
+            claimName: node-exporter-claim0
+            readOnly: true
+        - name: node-exporter-claim1
+          persistentVolumeClaim:
+            claimName: node-exporter-claim1
+            readOnly: true
+        - name: node-exporter-claim2
+          persistentVolumeClaim:
+            claimName: node-exporter-claim2
+            readOnly: true
+        - name: node-exporter-claim3
+          persistentVolumeClaim:
+            claimName: node-exporter-claim3
+status: {}

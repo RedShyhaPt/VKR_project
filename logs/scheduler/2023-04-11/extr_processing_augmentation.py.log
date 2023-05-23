@@ -1,0 +1,13 @@
+[2023-04-11T12:27:57.639+0000] {processor.py:154} INFO - Started process (PID=173) to work on /opt/airflow/dags/extr_processing_augmentation.py
+[2023-04-11T12:27:57.640+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/extr_processing_augmentation.py for tasks to queue
+[2023-04-11T12:27:57.641+0000] {logging_mixin.py:120} INFO - [2023-04-11T12:27:57.641+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/extr_processing_augmentation.py
+[2023-04-11T12:27:57.682+0000] {processor.py:766} INFO - DAG(s) dict_keys(['extr_proc_aug_pipl']) retrieved from /opt/airflow/dags/extr_processing_augmentation.py
+[2023-04-11T12:27:57.918+0000] {logging_mixin.py:120} INFO - [2023-04-11T12:27:57.917+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-04-11T12:27:57.948+0000] {logging_mixin.py:120} INFO - [2023-04-11T12:27:57.948+0000] {dag.py:3340} INFO - Setting next_dagrun for extr_proc_aug_pipl to 2022-12-24T21:30:00+00:00, run_after=2022-12-24T22:30:00+00:00
+[2023-04-11T12:27:57.966+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/extr_processing_augmentation.py took 0.333 seconds
+[2023-04-11T12:28:28.171+0000] {processor.py:154} INFO - Started process (PID=515) to work on /opt/airflow/dags/extr_processing_augmentation.py
+[2023-04-11T12:28:28.173+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/extr_processing_augmentation.py for tasks to queue
+[2023-04-11T12:28:28.174+0000] {logging_mixin.py:120} INFO - [2023-04-11T12:28:28.174+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/extr_processing_augmentation.py
+[2023-04-11T12:28:28.356+0000] {processor.py:766} INFO - DAG(s) dict_keys(['extr_proc_aug_pipl']) retrieved from /opt/airflow/dags/extr_processing_augmentation.py
+[2023-04-11T12:28:28.391+0000] {logging_mixin.py:120} INFO - [2023-04-11T12:28:28.390+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-04-11T12:28:28.427+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/extr_processing_augmentation.py took 0.260 seconds

@@ -1,0 +1,45 @@
+[2022-12-21T15:56:27.615+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: extr_proc_aug_pipl.augmentaition scheduled__2022-12-18T00:00:00+00:00 [queued]>
+[2022-12-21T15:56:27.629+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: extr_proc_aug_pipl.augmentaition scheduled__2022-12-18T00:00:00+00:00 [queued]>
+[2022-12-21T15:56:27.630+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-21T15:56:27.630+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 4
+[2022-12-21T15:56:27.630+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-21T15:56:27.689+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): augmentaition> on 2022-12-18 00:00:00+00:00
+[2022-12-21T15:56:27.694+0000] {standard_task_runner.py:55} INFO - Started process 271 to run task
+[2022-12-21T15:56:27.699+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'extr_proc_aug_pipl', 'augmentaition', 'scheduled__2022-12-18T00:00:00+00:00', '--job-id', '5123', '--raw', '--subdir', 'DAGS_FOLDER/extr_processing_augmentation.py', '--cfg-path', '/tmp/tmp4wjjk2wh']
+[2022-12-21T15:56:27.701+0000] {standard_task_runner.py:83} INFO - Job 5123: Subtask augmentaition
+[2022-12-21T15:56:27.747+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-12-21T15:56:27.799+0000] {task_command.py:376} INFO - Running <TaskInstance: extr_proc_aug_pipl.augmentaition scheduled__2022-12-18T00:00:00+00:00 [running]> on host ed3e98310717
+[2022-12-21T15:56:27.914+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=extr_proc_aug_pipl
+AIRFLOW_CTX_TASK_ID=augmentaition
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-18T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-18T00:00:00+00:00
+[2022-12-21T15:56:27.915+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-12-21T15:56:27.916+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 5']
+[2022-12-21T15:56:27.928+0000] {subprocess.py:86} INFO - Output:
+[2022-12-21T15:56:28.256+0000] {local_task_job.py:87} ERROR - Received SIGTERM. Terminating subprocesses
+[2022-12-21T15:56:28.258+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 271. PIDs of all processes in the group: [274, 271]
+[2022-12-21T15:56:28.258+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 271
+[2022-12-21T15:56:28.259+0000] {taskinstance.py:1562} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-12-21T15:56:28.259+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2022-12-21T15:56:28.275+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 191, in execute
+    cwd=self.cwd,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b''):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1564, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-12-21T15:56:28.323+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=extr_proc_aug_pipl, task_id=augmentaition, execution_date=20221218T000000, start_date=20221221T155627, end_date=20221221T155628
+[2022-12-21T15:56:28.399+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 5123 for task augmentaition (Task received SIGTERM signal; 271)
+[2022-12-21T15:56:28.436+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=271, status='terminated', exitcode=1, started='15:56:27') (271) terminated with exit code 1
+[2022-12-21T15:56:28.437+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=274, status='terminated', started='15:56:27') (274) terminated with exit code None
+[2022-12-21T15:56:28.437+0000] {local_task_job.py:164} INFO - Task exited with return code 143
+[2022-12-21T15:56:28.480+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

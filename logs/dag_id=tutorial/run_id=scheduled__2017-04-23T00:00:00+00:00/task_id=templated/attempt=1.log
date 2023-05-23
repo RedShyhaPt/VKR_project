@@ -1,0 +1,44 @@
+[2022-10-27T12:56:31.696+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.templated scheduled__2017-04-23T00:00:00+00:00 [queued]>
+[2022-10-27T12:56:31.710+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.templated scheduled__2017-04-23T00:00:00+00:00 [queued]>
+[2022-10-27T12:56:31.710+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T12:56:31.710+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2022-10-27T12:56:31.710+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T12:56:31.804+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): templated> on 2017-04-23 00:00:00+00:00
+[2022-10-27T12:56:31.812+0000] {standard_task_runner.py:55} INFO - Started process 7655 to run task
+[2022-10-27T12:56:31.817+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'tutorial', 'templated', 'scheduled__2017-04-23T00:00:00+00:00', '--job-id', '2177', '--raw', '--subdir', 'DAGS_FOLDER/tuto.py', '--cfg-path', '/tmp/tmppmukasb0']
+[2022-10-27T12:56:31.819+0000] {standard_task_runner.py:83} INFO - Job 2177: Subtask templated
+[2022-10-27T12:56:31.838+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-27T12:56:31.918+0000] {task_command.py:376} INFO - Running <TaskInstance: tutorial.templated scheduled__2017-04-23T00:00:00+00:00 [running]> on host e60030a57919
+[2022-10-27T12:56:32.031+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=tutorial
+AIRFLOW_CTX_TASK_ID=templated
+AIRFLOW_CTX_EXECUTION_DATE=2017-04-23T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2017-04-23T00:00:00+00:00
+[2022-10-27T12:56:32.032+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-10-27T12:56:32.033+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n    \n        echo "2017-04-23"\n        echo "2017-04-30"\n        echo "Parameter I passed in"\n    \n        echo "2017-04-23"\n        echo "2017-04-30"\n        echo "Parameter I passed in"\n    \n        echo "2017-04-23"\n        echo "2017-04-30"\n        echo "Parameter I passed in"\n    \n        echo "2017-04-23"\n        echo "2017-04-30"\n        echo "Parameter I passed in"\n    \n        echo "2017-04-23"\n        echo "2017-04-30"\n        echo "Parameter I passed in"\n    ']
+[2022-10-27T12:56:32.045+0000] {subprocess.py:86} INFO - Output:
+[2022-10-27T12:56:32.047+0000] {subprocess.py:93} INFO - 2017-04-23
+[2022-10-27T12:56:32.048+0000] {subprocess.py:93} INFO - 2017-04-30
+[2022-10-27T12:56:32.048+0000] {subprocess.py:93} INFO - Parameter I passed in
+[2022-10-27T12:56:32.048+0000] {subprocess.py:93} INFO - 2017-04-23
+[2022-10-27T12:56:32.048+0000] {subprocess.py:93} INFO - 2017-04-30
+[2022-10-27T12:56:32.048+0000] {subprocess.py:93} INFO - Parameter I passed in
+[2022-10-27T12:56:32.048+0000] {subprocess.py:93} INFO - 2017-04-23
+[2022-10-27T12:56:32.049+0000] {subprocess.py:93} INFO - 2017-04-30
+[2022-10-27T12:56:32.049+0000] {subprocess.py:93} INFO - Parameter I passed in
+[2022-10-27T12:56:32.049+0000] {subprocess.py:93} INFO - 2017-04-23
+[2022-10-27T12:56:32.049+0000] {subprocess.py:93} INFO - 2017-04-30
+[2022-10-27T12:56:32.049+0000] {subprocess.py:93} INFO - Parameter I passed in
+[2022-10-27T12:56:32.049+0000] {subprocess.py:93} INFO - 2017-04-23
+[2022-10-27T12:56:32.050+0000] {subprocess.py:93} INFO - 2017-04-30
+[2022-10-27T12:56:32.050+0000] {subprocess.py:93} INFO - Parameter I passed in
+[2022-10-27T12:56:32.050+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2022-10-27T12:56:32.097+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=tutorial, task_id=templated, execution_date=20170423T000000, start_date=20221027T125631, end_date=20221027T125632
+[2022-10-27T12:56:32.149+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-10-27T12:56:32.172+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

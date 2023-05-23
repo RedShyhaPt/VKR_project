@@ -1,0 +1,47 @@
+[2022-12-03T18:10:04.494+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: extr_proc_aug_pipl.processing_data scheduled__2022-11-30T00:00:00+00:00 [queued]>
+[2022-12-03T18:10:04.546+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: extr_proc_aug_pipl.processing_data scheduled__2022-11-30T00:00:00+00:00 [queued]>
+[2022-12-03T18:10:04.547+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-03T18:10:04.547+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 4
+[2022-12-03T18:10:04.547+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-03T18:10:04.617+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): processing_data> on 2022-11-30 00:00:00+00:00
+[2022-12-03T18:10:04.643+0000] {standard_task_runner.py:55} INFO - Started process 259 to run task
+[2022-12-03T18:10:04.658+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'extr_proc_aug_pipl', 'processing_data', 'scheduled__2022-11-30T00:00:00+00:00', '--job-id', '4943', '--raw', '--subdir', 'DAGS_FOLDER/extr_processing_augmentation.py', '--cfg-path', '/tmp/tmp7hha4g48']
+[2022-12-03T18:10:04.663+0000] {standard_task_runner.py:83} INFO - Job 4943: Subtask processing_data
+[2022-12-03T18:10:04.972+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-12-03T18:10:05.150+0000] {task_command.py:376} INFO - Running <TaskInstance: extr_proc_aug_pipl.processing_data scheduled__2022-11-30T00:00:00+00:00 [running]> on host ed3e98310717
+[2022-12-03T18:10:05.679+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=extr_proc_aug_pipl
+AIRFLOW_CTX_TASK_ID=processing_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-30T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-30T00:00:00+00:00
+[2022-12-03T18:10:05.681+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-12-03T18:10:05.682+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 5']
+[2022-12-03T18:10:05.711+0000] {subprocess.py:86} INFO - Output:
+[2022-12-03T18:10:10.314+0000] {local_task_job.py:87} ERROR - Received SIGTERM. Terminating subprocesses
+[2022-12-03T18:10:10.320+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 259. PIDs of all processes in the group: [268, 259]
+[2022-12-03T18:10:10.321+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 259
+[2022-12-03T18:10:10.321+0000] {taskinstance.py:1562} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-12-03T18:10:10.322+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2022-12-03T18:10:10.361+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 191, in execute
+    cwd=self.cwd,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b''):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1564, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-12-03T18:10:10.375+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=extr_proc_aug_pipl, task_id=processing_data, execution_date=20221130T000000, start_date=20221203T181004, end_date=20221203T181010
+[2022-12-03T18:10:11.695+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 4943 for task processing_data (Task received SIGTERM signal; 259)
+[2022-12-03T18:10:11.744+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=268, status='terminated', started='18:10:04') (268) terminated with exit code None
+[2022-12-03T18:10:11.745+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=259, status='terminated', exitcode=1, started='18:10:03') (259) terminated with exit code 1
+[2022-12-03T18:10:11.745+0000] {local_task_job.py:164} INFO - Task exited with return code 143
+[2022-12-03T18:10:11.864+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-12-03T18:10:13.063+0000] {local_task_job.py:87} ERROR - Received SIGTERM. Terminating subprocesses
+[2022-12-03T18:10:13.064+0000] {local_task_job.py:164} INFO - Task exited with return code 143

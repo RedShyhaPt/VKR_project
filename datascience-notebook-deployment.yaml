@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: datascience-notebook
+  name: datascience-notebook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: datascience-notebook
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/default: "true"
+        io.kompose.service: datascience-notebook
+    spec:
+      containers:
+        - env:
+            - name: TZ
+              value: Europe/Moscow
+          image: jupyter/scipy-notebook
+          name: jupyter-notebook
+          ports:
+            - containerPort: 8888
+          resources: {}
+          volumeMounts:
+            - mountPath: /home/jovyan/work
+              name: datascience-notebook-claim0
+      restartPolicy: Always
+      volumes:
+        - name: datascience-notebook-claim0
+          persistentVolumeClaim:
+            claimName: datascience-notebook-claim0
+status: {}

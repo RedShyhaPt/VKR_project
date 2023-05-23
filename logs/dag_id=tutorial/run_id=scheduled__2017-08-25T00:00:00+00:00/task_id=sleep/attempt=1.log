@@ -1,0 +1,29 @@
+[2022-10-27T12:58:44.616+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.sleep scheduled__2017-08-25T00:00:00+00:00 [queued]>
+[2022-10-27T12:58:44.643+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.sleep scheduled__2017-08-25T00:00:00+00:00 [queued]>
+[2022-10-27T12:58:44.644+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T12:58:44.644+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 4
+[2022-10-27T12:58:44.644+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T12:58:44.685+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): sleep> on 2017-08-25 00:00:00+00:00
+[2022-10-27T12:58:44.694+0000] {standard_task_runner.py:55} INFO - Started process 8920 to run task
+[2022-10-27T12:58:44.700+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'tutorial', 'sleep', 'scheduled__2017-08-25T00:00:00+00:00', '--job-id', '2546', '--raw', '--subdir', 'DAGS_FOLDER/tuto.py', '--cfg-path', '/tmp/tmplwx9j3jp']
+[2022-10-27T12:58:44.703+0000] {standard_task_runner.py:83} INFO - Job 2546: Subtask sleep
+[2022-10-27T12:58:44.737+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-27T12:58:44.825+0000] {task_command.py:376} INFO - Running <TaskInstance: tutorial.sleep scheduled__2017-08-25T00:00:00+00:00 [running]> on host e60030a57919
+[2022-10-27T12:58:44.953+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=tutorial
+AIRFLOW_CTX_TASK_ID=sleep
+AIRFLOW_CTX_EXECUTION_DATE=2017-08-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2017-08-25T00:00:00+00:00
+[2022-10-27T12:58:44.955+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-10-27T12:58:44.956+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 5']
+[2022-10-27T12:58:44.978+0000] {subprocess.py:86} INFO - Output:
+[2022-10-27T12:58:49.983+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2022-10-27T12:58:50.046+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=tutorial, task_id=sleep, execution_date=20170825T000000, start_date=20221027T125844, end_date=20221027T125850
+[2022-10-27T12:58:50.119+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-10-27T12:58:50.158+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

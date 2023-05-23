@@ -1,0 +1,7 @@
+[2022-12-03T18:09:55.524+0000] {processor.py:154} INFO - Started process (PID=172) to work on /opt/airflow/dags/extr_processing_augmentation.py
+[2022-12-03T18:09:55.527+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/extr_processing_augmentation.py for tasks to queue
+[2022-12-03T18:09:55.528+0000] {logging_mixin.py:120} INFO - [2022-12-03T18:09:55.528+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/extr_processing_augmentation.py
+[2022-12-03T18:09:55.591+0000] {processor.py:766} INFO - DAG(s) dict_keys(['extr_proc_aug_pipl']) retrieved from /opt/airflow/dags/extr_processing_augmentation.py
+[2022-12-03T18:09:56.055+0000] {logging_mixin.py:120} INFO - [2022-12-03T18:09:56.054+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-12-03T18:09:56.102+0000] {logging_mixin.py:120} INFO - [2022-12-03T18:09:56.101+0000] {dag.py:3340} INFO - Setting next_dagrun for extr_proc_aug_pipl to 2022-11-27T00:00:00+00:00, run_after=2022-11-28T00:00:00+00:00
+[2022-12-03T18:09:56.134+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/extr_processing_augmentation.py took 0.618 seconds

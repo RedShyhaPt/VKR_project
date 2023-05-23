@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: ftpd-server
+  name: ftpd-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: ftpd-server
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/: "true"
+        io.kompose.service: ftpd-server
+    spec:
+      containers:
+        - env:
+            - name: FTP_USER_HOME
+              value: /home/ftpusers/mlflow
+            - name: FTP_USER_NAME
+              value: mlflow
+            - name: FTP_USER_PASS
+              value: "12345"
+            - name: PUBLICHOST
+              value: localhost
+          image: stilliard/pure-ftpd:latest
+          name: ftpd-server
+          ports:
+            - containerPort: 21
+            - containerPort: 30000
+            - containerPort: 30001
+            - containerPort: 30002
+            - containerPort: 30003
+            - containerPort: 30004
+            - containerPort: 30005
+            - containerPort: 30006
+            - containerPort: 30007
+            - containerPort: 30008
+            - containerPort: 30009
+          resources: {}
+          volumeMounts:
+            - mountPath: /home/ftpusers
+              name: ftpd-server-claim0
+      restartPolicy: Always
+      volumes:
+        - name: ftpd-server-claim0
+          persistentVolumeClaim:
+            claimName: ftpd-server-claim0
+status: {}

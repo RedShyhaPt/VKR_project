@@ -1,0 +1,161 @@
+[2022-11-15T12:40:20.797+0000] {processor.py:154} INFO - Started process (PID=191) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:40:20.799+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:40:20.801+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:40:20.800+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:40:20.845+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:40:21.149+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:40:21.149+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:40:21.181+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:40:21.181+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:40:21.204+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.417 seconds
+[2022-11-15T12:40:51.725+0000] {processor.py:154} INFO - Started process (PID=292) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:40:51.726+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:40:51.726+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:40:51.726+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:40:51.856+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:40:51.885+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:40:51.885+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:40:51.906+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:40:51.906+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:40:51.922+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.200 seconds
+[2022-11-15T12:41:22.265+0000] {processor.py:154} INFO - Started process (PID=349) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:41:22.265+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:41:22.266+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:41:22.266+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:41:22.279+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:41:22.313+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:41:22.313+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:41:22.334+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:41:22.334+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:41:22.352+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.090 seconds
+[2022-11-15T12:41:52.731+0000] {processor.py:154} INFO - Started process (PID=404) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:41:52.732+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:41:52.733+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:41:52.733+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:41:52.753+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:41:52.799+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:41:52.799+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:41:52.847+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:41:52.847+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:41:52.873+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.146 seconds
+[2022-11-15T12:42:23.170+0000] {processor.py:154} INFO - Started process (PID=454) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:42:23.171+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:42:23.172+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:42:23.172+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:42:23.186+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:42:23.230+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:42:23.230+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:42:23.256+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:42:23.255+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:42:23.276+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.109 seconds
+[2022-11-15T12:42:53.554+0000] {processor.py:154} INFO - Started process (PID=511) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:42:53.555+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:42:53.556+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:42:53.555+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:42:53.569+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:42:53.606+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:42:53.606+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:42:53.629+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:42:53.629+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:42:53.650+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.099 seconds
+[2022-11-15T12:43:24.046+0000] {processor.py:154} INFO - Started process (PID=568) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:43:24.047+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:43:24.047+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:43:24.047+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:43:24.060+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:43:24.101+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:43:24.101+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:43:24.133+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:43:24.133+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:43:24.153+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.109 seconds
+[2022-11-15T12:43:54.642+0000] {processor.py:154} INFO - Started process (PID=616) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:43:54.644+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:43:54.646+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:43:54.646+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:43:54.675+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:43:54.745+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:43:54.745+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:43:54.788+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:43:54.788+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:43:54.843+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.209 seconds
+[2022-11-15T12:44:25.145+0000] {processor.py:154} INFO - Started process (PID=673) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:44:25.145+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:44:25.146+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:44:25.146+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:44:25.159+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:44:25.194+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:44:25.194+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:44:25.216+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:44:25.215+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:44:25.231+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.090 seconds
+[2022-11-15T12:44:55.669+0000] {processor.py:154} INFO - Started process (PID=730) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:44:55.670+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:44:55.671+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:44:55.671+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:44:55.685+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:44:55.725+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:44:55.725+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:44:55.748+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:44:55.748+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:44:55.766+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.099 seconds
+[2022-11-15T12:45:26.182+0000] {processor.py:154} INFO - Started process (PID=787) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:45:26.183+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:45:26.184+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:45:26.184+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:45:26.213+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:45:26.285+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:45:26.285+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:45:26.313+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:45:26.313+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:45:26.335+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.156 seconds
+[2022-11-15T12:45:56.668+0000] {processor.py:154} INFO - Started process (PID=835) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:45:56.670+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:45:56.670+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:45:56.670+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:45:56.688+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:45:56.733+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:45:56.733+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:45:56.779+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:45:56.779+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:45:56.798+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.133 seconds
+[2022-11-15T12:46:27.044+0000] {processor.py:154} INFO - Started process (PID=893) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:46:27.045+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:46:27.046+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:46:27.045+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:46:27.058+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:46:27.093+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:46:27.093+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:46:27.127+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:46:27.127+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:46:27.152+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.111 seconds
+[2022-11-15T12:46:57.406+0000] {processor.py:154} INFO - Started process (PID=950) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:46:57.411+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:46:57.412+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:46:57.412+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:46:57.425+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:46:57.460+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:46:57.460+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:46:57.484+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:46:57.484+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:46:57.509+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.105 seconds
+[2022-11-15T12:47:28.033+0000] {processor.py:154} INFO - Started process (PID=998) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:47:28.034+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:47:28.035+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:47:28.034+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:47:28.051+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:47:28.091+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:47:28.090+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:47:28.120+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:47:28.120+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:47:28.487+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.457 seconds
+[2022-11-15T12:47:58.991+0000] {processor.py:154} INFO - Started process (PID=1055) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:47:58.997+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:47:58.998+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:47:58.998+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:47:59.010+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:47:59.046+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:47:59.045+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:47:59.067+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:47:59.067+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:47:59.094+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.106 seconds
+[2022-11-15T12:48:29.476+0000] {processor.py:154} INFO - Started process (PID=1112) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:48:29.477+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:48:29.477+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:48:29.477+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:48:29.490+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:48:29.524+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:48:29.524+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:48:29.546+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:48:29.546+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:48:29.576+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.102 seconds
+[2022-11-15T12:48:59.949+0000] {processor.py:154} INFO - Started process (PID=1170) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:48:59.950+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:48:59.951+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:48:59.950+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:48:59.972+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:49:00.030+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:49:00.029+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:49:00.059+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:49:00.058+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:49:00.079+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.132 seconds
+[2022-11-15T12:49:30.425+0000] {processor.py:154} INFO - Started process (PID=1218) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:49:30.426+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:49:30.427+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:49:30.427+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:49:30.440+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:49:30.476+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:49:30.476+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:49:30.508+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:49:30.508+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:49:30.532+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.110 seconds
+[2022-11-15T12:50:00.912+0000] {processor.py:154} INFO - Started process (PID=1275) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:50:00.913+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:50:00.914+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:50:00.914+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:50:00.928+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:50:00.976+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:50:00.976+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:50:01.018+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:50:01.018+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:50:01.045+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.135 seconds
+[2022-11-15T12:50:31.404+0000] {processor.py:154} INFO - Started process (PID=1332) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:50:31.405+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:50:31.405+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:50:31.405+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:50:31.417+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:50:31.454+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:50:31.454+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:50:31.475+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:50:31.475+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:50:31.491+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.090 seconds
+[2022-11-15T12:51:01.826+0000] {processor.py:154} INFO - Started process (PID=1387) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:51:01.827+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:51:01.827+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:51:01.827+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:51:01.841+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:51:01.882+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:51:01.882+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:51:01.908+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:51:01.908+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:51:01.927+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.106 seconds
+[2022-11-15T12:51:32.196+0000] {processor.py:154} INFO - Started process (PID=1437) to work on /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:51:32.196+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/push_qoute.py for tasks to queue
+[2022-11-15T12:51:32.197+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:51:32.197+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:51:32.211+0000] {processor.py:766} INFO - DAG(s) dict_keys(['push_qoute']) retrieved from /opt/airflow/dags/push_qoute.py
+[2022-11-15T12:51:32.245+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:51:32.245+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2022-11-15T12:51:32.269+0000] {logging_mixin.py:120} INFO - [2022-11-15T12:51:32.269+0000] {dag.py:3340} INFO - Setting next_dagrun for push_qoute to 2022-11-10T00:00:00+00:00, run_after=2022-11-11T00:00:00+00:00
+[2022-11-15T12:51:32.287+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/push_qoute.py took 0.094 seconds

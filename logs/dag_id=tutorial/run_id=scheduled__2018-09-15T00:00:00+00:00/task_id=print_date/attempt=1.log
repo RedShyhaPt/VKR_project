@@ -1,0 +1,30 @@
+[2022-10-27T13:05:46.621+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.print_date scheduled__2018-09-15T00:00:00+00:00 [queued]>
+[2022-10-27T13:05:46.648+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.print_date scheduled__2018-09-15T00:00:00+00:00 [queued]>
+[2022-10-27T13:05:46.649+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T13:05:46.649+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2022-10-27T13:05:46.649+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T13:05:46.692+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): print_date> on 2018-09-15 00:00:00+00:00
+[2022-10-27T13:05:46.702+0000] {standard_task_runner.py:55} INFO - Started process 12870 to run task
+[2022-10-27T13:05:46.707+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'tutorial', 'print_date', 'scheduled__2018-09-15T00:00:00+00:00', '--job-id', '3684', '--raw', '--subdir', 'DAGS_FOLDER/tuto.py', '--cfg-path', '/tmp/tmpkbwchse6']
+[2022-10-27T13:05:46.710+0000] {standard_task_runner.py:83} INFO - Job 3684: Subtask print_date
+[2022-10-27T13:05:46.754+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-27T13:05:46.931+0000] {task_command.py:376} INFO - Running <TaskInstance: tutorial.print_date scheduled__2018-09-15T00:00:00+00:00 [running]> on host e60030a57919
+[2022-10-27T13:05:47.189+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=tutorial
+AIRFLOW_CTX_TASK_ID=print_date
+AIRFLOW_CTX_EXECUTION_DATE=2018-09-15T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2018-09-15T00:00:00+00:00
+[2022-10-27T13:05:47.191+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-10-27T13:05:47.192+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'date']
+[2022-10-27T13:05:47.257+0000] {subprocess.py:86} INFO - Output:
+[2022-10-27T13:05:47.263+0000] {subprocess.py:93} INFO - Thu Oct 27 13:05:47 UTC 2022
+[2022-10-27T13:05:47.264+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2022-10-27T13:05:47.392+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=tutorial, task_id=print_date, execution_date=20180915T000000, start_date=20221027T130546, end_date=20221027T130547
+[2022-10-27T13:05:47.488+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-10-27T13:05:47.567+0000] {local_task_job.py:273} INFO - 2 downstream tasks scheduled from follow-on schedule check

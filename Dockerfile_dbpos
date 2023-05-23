@@ -1,0 +1,10 @@
+# postgres
+FROM postgres
+
+EXPOSE 5432
+
+ENV POSTGRES_USER stock
+ENV POSTGRES_PASSWORD stock
+ENV POSTGRES_DB stock_predicting
+# copy sql script for creating tables
+COPY create_base.sql /docker-entrypoint-initdb.d/

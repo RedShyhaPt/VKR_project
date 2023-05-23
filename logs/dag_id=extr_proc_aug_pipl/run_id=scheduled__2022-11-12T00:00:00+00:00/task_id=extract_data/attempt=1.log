@@ -1,0 +1,30 @@
+[2022-11-13T12:53:19.237+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: extr_proc_aug_pipl.extract_data scheduled__2022-11-12T00:00:00+00:00 [queued]>
+[2022-11-13T12:53:19.274+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: extr_proc_aug_pipl.extract_data scheduled__2022-11-12T00:00:00+00:00 [queued]>
+[2022-11-13T12:53:19.275+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-13T12:53:19.275+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2022-11-13T12:53:19.275+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-13T12:53:19.319+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): extract_data> on 2022-11-12 00:00:00+00:00
+[2022-11-13T12:53:19.331+0000] {standard_task_runner.py:55} INFO - Started process 1879 to run task
+[2022-11-13T12:53:19.337+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'extr_proc_aug_pipl', 'extract_data', 'scheduled__2022-11-12T00:00:00+00:00', '--job-id', '4726', '--raw', '--subdir', 'DAGS_FOLDER/extr_processing_augmentation.py', '--cfg-path', '/tmp/tmp6lwf8s00']
+[2022-11-13T12:53:19.340+0000] {standard_task_runner.py:83} INFO - Job 4726: Subtask extract_data
+[2022-11-13T12:53:19.377+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-11-13T12:53:19.477+0000] {task_command.py:376} INFO - Running <TaskInstance: extr_proc_aug_pipl.extract_data scheduled__2022-11-12T00:00:00+00:00 [running]> on host ed3e98310717
+[2022-11-13T12:53:19.621+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=extr_proc_aug_pipl
+AIRFLOW_CTX_TASK_ID=extract_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-12T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-12T00:00:00+00:00
+[2022-11-13T12:53:19.623+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-11-13T12:53:19.624+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'date']
+[2022-11-13T12:53:19.642+0000] {subprocess.py:86} INFO - Output:
+[2022-11-13T12:53:19.645+0000] {subprocess.py:93} INFO - Sun Nov 13 12:53:19 UTC 2022
+[2022-11-13T12:53:19.645+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2022-11-13T12:53:19.672+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=extr_proc_aug_pipl, task_id=extract_data, execution_date=20221112T000000, start_date=20221113T125319, end_date=20221113T125319
+[2022-11-13T12:53:19.713+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-11-13T12:53:19.741+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,45 @@
+[2022-10-27T13:10:36.701+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.sleep scheduled__2019-06-16T00:00:00+00:00 [queued]>
+[2022-10-27T13:10:36.723+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: tutorial.sleep scheduled__2019-06-16T00:00:00+00:00 [queued]>
+[2022-10-27T13:10:36.723+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T13:10:36.724+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 4
+[2022-10-27T13:10:36.729+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-27T13:10:36.767+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): sleep> on 2019-06-16 00:00:00+00:00
+[2022-10-27T13:10:36.779+0000] {standard_task_runner.py:55} INFO - Started process 15746 to run task
+[2022-10-27T13:10:36.785+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'tutorial', 'sleep', 'scheduled__2019-06-16T00:00:00+00:00', '--job-id', '4530', '--raw', '--subdir', 'DAGS_FOLDER/tuto.py', '--cfg-path', '/tmp/tmp65nytzqx']
+[2022-10-27T13:10:36.788+0000] {standard_task_runner.py:83} INFO - Job 4530: Subtask sleep
+[2022-10-27T13:10:36.849+0000] {logging_mixin.py:120} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-27T13:10:36.990+0000] {task_command.py:376} INFO - Running <TaskInstance: tutorial.sleep scheduled__2019-06-16T00:00:00+00:00 [running]> on host e60030a57919
+[2022-10-27T13:10:37.197+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@***.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=tutorial
+AIRFLOW_CTX_TASK_ID=sleep
+AIRFLOW_CTX_EXECUTION_DATE=2019-06-16T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-06-16T00:00:00+00:00
+[2022-10-27T13:10:37.200+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-10-27T13:10:37.201+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 5']
+[2022-10-27T13:10:37.239+0000] {subprocess.py:86} INFO - Output:
+[2022-10-27T13:10:39.591+0000] {local_task_job.py:87} ERROR - Received SIGTERM. Terminating subprocesses
+[2022-10-27T13:10:39.594+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 15746. PIDs of all processes in the group: [15759, 15746]
+[2022-10-27T13:10:39.595+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 15746
+[2022-10-27T13:10:39.619+0000] {taskinstance.py:1562} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-10-27T13:10:39.619+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2022-10-27T13:10:39.665+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 191, in execute
+    cwd=self.cwd,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b''):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1564, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-10-27T13:10:39.671+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=tutorial, task_id=sleep, execution_date=20190616T000000, start_date=20221027T131036, end_date=20221027T131039
+[2022-10-27T13:10:39.723+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 4530 for task sleep (Task received SIGTERM signal; 15746)
+[2022-10-27T13:10:39.764+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=15759, status='terminated', started='13:10:37') (15759) terminated with exit code None
+[2022-10-27T13:10:39.765+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=15746, status='terminated', exitcode=1, started='13:10:36') (15746) terminated with exit code 1
+[2022-10-27T13:10:39.765+0000] {local_task_job.py:164} INFO - Task exited with return code 143
+[2022-10-27T13:10:39.870+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
