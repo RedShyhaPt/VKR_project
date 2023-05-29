@@ -10,6 +10,8 @@ import re
 import nltk
 nltk.download('stopwords')
 from nltk.corpus import stopwords
+import torch
+from transformers import AutoTokenizer, AutoModel
 
 df2 = pd.read_csv("yand_news.csv",sep=";")
 df2_2 = pd.read_csv("eco.csv",sep=";")
@@ -77,3 +79,27 @@ df3 = pd.merge(df3_concated,df2_3,how="outer")
 df3=df3.sort_values(by='date_time')
 df3.ffill(inplace=True)
 df3.fillna(method='bfill',inplace=True)
+
+tokenizer = AutoTokenizer.from_pretrained("cointegrated/rubert-tiny")
+model = AutoModel.from_pretrained("cointegrated/rubert-tiny")
+# model.cuda()  # uncomment it if you have a GPU
+
+def embed_bert_cls(text, model, tokenizer):
+    t = tokenizer(text, padding=True, truncation=True, return_tensors='pt')
+    with torch.no_grad():
+        model_output = model(**{k: v.to(model.device) for k, v in t.items()})
+    embeddings = model_output.last_hidden_state[:, 0, :]
+    embeddings = torch.nn.functional.normalize(embeddings)
+    return embeddings[0].numpy()
+
+
+df3['bert_text_a'], df3['bert_text_b'], df3['bert_text_c'] = ' ', ' ', ' '
+df3['bert_aug_a'], df3['bert_aug_b'], df3['bert_aug_c'] = = ' ', ' ', ' '
+for i in df3.index:
+  df3['bert_text_a'][i] = embed_bert_cls(df3['news_a'][i], model, tokenizer)
+  df3['bert_text_b'][i] = embed_bert_cls(df3['news_b'][i], model, tokenizer)
+  df3['bert_text_c'][i] = embed_bert_cls(df3['news_c'][i], model, tokenizer)
+
+  df3['bert_aug_a'][i] = embed_bert_cls(df3['aug_a'][i], model, tokenizer)
+  df3['bert_aug_b'][i] = embed_bert_cls(df3['aug_b'][i], model, tokenizer)
+  df3['bert_aug_c'][i] = embed_bert_cls(df3['aug_c'][i], model, tokenizer) 
